@@ -1,5 +1,5 @@
 class Dog
-
+  # attr_accessor :age, :breed, :name, :gender, :spayed_or_neutered, :cost_to_adopt, :owner_name
   def initialize(age, breed, name, gender, spayed_or_neutered, cost_to_adopt, owner_name)
     @age = age
     @breed = breed
@@ -80,9 +80,9 @@ describe 'Dog' do
 
     harry.adopt!('peter')
 
-    expect(harry.owner_name).to eq 'peter'
-    expect(harry.spayed_or_neutered).to eq true
-    expect(harry.cost_to_adopt).to eq nil
+    expect{harry.owner_name}.to eq 'peter'
+    expect{harry.spayed_or_neutered}.to eq true
+    expect{harry.cost_to_adopt}.to eq nil
 
   end
 
