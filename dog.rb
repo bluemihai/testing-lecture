@@ -14,6 +14,27 @@ class Dog
     @age
   end
 
+  def in_shelter?
+    true
+  end
+
+  def bark
+    "bow wow"
+  end
+
+  def adopt!(owner_name)
+    if owner_name.nil?
+      "need an owner"
+    else
+      return @owner_name = owner_name
+      return @spayed_or_neutered = true
+      return @cost_to_adopt = nil
+    end
+  end
+
+
+
+
 end
 # harry = Dog.new(2,"pit","harry",'male', false, 20)
 
@@ -27,4 +48,28 @@ describe 'Dog' do
   it 'should have an age' do
      expect(harry.age).to eq 5
   end
+
+  it 'should bark' do
+    expect(harry.bark).to eq "bow wow"
+  end
+
+  it 'should be true' do
+    expect(harry.in_shelter?).to eq true
+  end
+
+  # it 'should return error is name is nil' do
+  #   expect(harry.adopt!(nil)).to eq "need an owner"
+  # end
+
+  it 'should retun an name' do
+    expect(harry.adopt!("peter")).to eq 'peter'
+  end
+
+  it 'should spayed_or_neutered' do
+
+    expect(harry.adopt!('harry')).to eq 'harry'
+    puts harry.adopt!(@owner_name)
+  end
+
+
 end
