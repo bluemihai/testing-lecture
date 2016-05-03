@@ -38,4 +38,8 @@ describe Dog do
   it 'prints woof' do
     expect(spot.bark).to eq 'woof'
   end
+
+  it 'John adopts spot' do
+    expect { spot.adopt!("John") }.to change(spot, :owner_name).from("").to("John")
+  end
 end

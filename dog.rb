@@ -21,4 +21,10 @@ class Dog
   def bark
     return "woof"
   end
+
+  def adopt!(owner_name)
+    @owner_name = owner_name
+    @spayed_or_neutered = true
+    @cost_to_adopt = nil
+  end
 end
