@@ -30,4 +30,8 @@ describe Dog do
   it '#init owner_name' do
     expect(spot.owner_name).to eq ""
   end
+
+  it "tells if dog is in shelter" do
+    expect(spot.in_shelter?).to eq true
+  end
 end

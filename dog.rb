@@ -9,4 +9,12 @@ class Dog
     @cost_to_adopt = cost
     @owner_name = owner
   end
+
+  def in_shelter?
+    if @owner_name == ""
+      return true
+    else
+      return false
+    end
+  end
 end
