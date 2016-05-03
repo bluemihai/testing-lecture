@@ -17,4 +17,8 @@ class Dog
       return false
     end
   end
+
+  def bark
+    return "woof"
+  end
 end
