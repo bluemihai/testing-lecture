@@ -13,7 +13,7 @@ describe 'dog' do
   context 'bark' do
     it 'barks' do
       dog = Dog.new(1, "Poodle", "Max", "M", true, 200, "Kevin")
-      expect(dog.bark).to eq "Bark!"
+      expect(dog.BARK_TYPES.include? dog.bark).to be true
     end
   end
 
@@ -35,7 +35,7 @@ describe 'dog' do
   context 'adopt!' do
     it 'throws an error without an owner_name' do
       dog = Dog.new(1, "Poodle", "Max", "M", true, 200, "Kevin")
-      expect{ dog.adopt!("") }.to raise_error
+      expect{ dog.adopt!("") }.to raise_error(RuntimeError)
 
     end
   end

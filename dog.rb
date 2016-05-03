@@ -1,6 +1,8 @@
 class Dog
 
-  attr_reader :owner_name, :spayed_or_neutered, :cost_to_adopt
+  attr_reader :owner_name, :spayed_or_neutered, :cost_to_adopt, :BARK_TYPES
+
+
 
   def initialize(age, breed, name, gender, spayed_or_neutered, cost_to_adopt, owner_name)
     @age = age
@@ -10,6 +12,7 @@ class Dog
     @spayed_or_neutered = spayed_or_neutered
     @cost_to_adopt = cost_to_adopt
     @owner_name = owner_name
+    @BARK_TYPES = ["Bark!", "Woof!", "Meow!"]
   end
 
   def in_shelter?
@@ -21,7 +24,8 @@ class Dog
   end
 
   def bark
-    "Bark!"
+
+    @BARK_TYPES.sample
   end
 
   def adopt!(owner_name)
@@ -36,6 +40,7 @@ class Dog
 
 end
 
+      # dog = Dog.new(1, "Poodle", "Max", "M", true, 200, "Kevin")
 
 # test init
 # actually raise error in line 29?
