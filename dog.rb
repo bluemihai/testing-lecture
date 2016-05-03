@@ -14,6 +14,18 @@ class Dog
     @age
   end
 
+  def owner_name
+    @owner_name
+  end
+
+  def spayed_or_neutered
+    @spayed_or_neutered
+  end
+
+  def cost_to_adopt
+    @cost_to_adopt
+  end
+
   def in_shelter?
     true
   end
@@ -61,15 +73,19 @@ describe 'Dog' do
   #   expect(harry.adopt!(nil)).to eq "need an owner"
   # end
 
-  it 'should retun an name' do
-    expect(harry.adopt!("peter")).to eq 'peter'
+  it 'should return adoption' do
+    expect(harry.owner_name).to eq 'kennel'
+    expect(harry.spayed_or_neutered).to eq false
+    expect(harry.cost_to_adopt).to eq 20
+
+    harry.adopt!('peter')
+
+    expect(harry.owner_name).to eq 'peter'
+    expect(harry.spayed_or_neutered).to eq true
+    expect(harry.cost_to_adopt).to eq nil
+
   end
 
-  it 'should spayed_or_neutered' do
-
-    expect(harry.adopt!('harry')).to eq 'harry'
-    puts harry.adopt!(@owner_name)
-  end
 
 
 end
